@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1" />
+  <title>Messenger WebView with Extensions</title>
+  <script src="https://connect.facebook.net/en_US/messenger.Extensions.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0078ff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Messenger WebView Test</h1>
+    <p>Click below to test <code>getContext()</code> function:</p>
+    <button onclick="getMessengerContext()">Get Messenger Context</button>
+    <div id="output">Waiting for all user action...</div>
+  </div>
+
+  <script>
+    function getMessengerContext() {
+      if (typeof MessengerExtensions === "undefined") {
+        document.getElementById("output").innerText = "MessengerExtensions is not available. Make sure this is opened in Messenger WebView.";
+        return;
+      }
+
+      MessengerExtensions.getContext('1191615432163749', 
+        function success(thread_context) {
+          document.getElementById("output").innerText =
+            "PSID: " + thread_context.psid + "\n" +
+            "Thread ID: " + thread_context.thread_id + "\n" +
+            "Page ID: " + thread_context.page_id;
+        },
+        function error(err) {
+          document.getElementById("output").innerText = "Error getting context: " + JSON.stringify(err);
+        }
+      );
+    }
+  </script>
+</body>
+</html>
