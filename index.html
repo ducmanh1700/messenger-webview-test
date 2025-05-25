@@ -1,70 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1" />
-  <title>Messenger WebView with Extensions</title>
-  <script src="https://connect.facebook.net/en_US/messenger.Extensions.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nhúng TikTok Video</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       margin: 0;
-      padding: 20px;
+      font-family: sans-serif;
       background: #f9f9f9;
     }
-    .container {
+    .tiktok-container {
+      max-width: 605px;
+      min-width: 325px;
+      width: 100%;
+      padding: 1rem;
       background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #0078ff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #output {
-      margin-top: 20px;
-      font-family: monospace;
-      white-space: pre-wrap;
-      background: #eee;
-      padding: 10px;
-      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Messenger WebView Test</h1>
-    <p>Click below to test <code>getContext()</code> function:</p>
-    <button onclick="getMessengerContext()">Get Messenger Context</button>
-    <div id="output">Waiting for all user action...</div>
+  <div class="tiktok-container">
+    <blockquote class="tiktok-embed"
+                cite="https://www.tiktok.com/@chetidi/video/7266732682028109058"
+                data-video-id="7266732682028109058"
+                style="max-width: 605px;min-width: 325px;">
+      <section>
+        <a target="_blank" title="@chetidi" href="https://www.tiktok.com/@chetidi?refer=embed">@chetidi</a>
+        Bạn nào muốn biết bí kíp nấu chè khúc bạch thơm mềm, béo ngậy, núng nính thì comment cho Tidi biết nha 😊
+        <a title="chetidi" target="_blank" href="https://www.tiktok.com/tag/chetidi?refer=embed">#chetidi</a>
+        <a title="chengondanang" target="_blank" href="https://www.tiktok.com/tag/chengondanang?refer=embed">#chengondanang</a>
+        <a title="che" target="_blank" href="https://www.tiktok.com/tag/che?refer=embed">#che</a>
+        <a title="learnontiktok" target="_blank" href="https://www.tiktok.com/tag/learnontiktok?refer=embed">#learnontiktok</a>
+        <a title="ancungtiktok" target="_blank" href="https://www.tiktok.com/tag/ancungtiktok?refer=embed">#ancungtiktok</a>
+        <a title="danang" target="_blank" href="https://www.tiktok.com/tag/danang?refer=embed">#danang</a>
+        <a title="xuhuong" target="_blank" href="https://www.tiktok.com/tag/xuhuong?refer=embed">#xuhuong</a>
+        <a title="khoinghiep" target="_blank" href="https://www.tiktok.com/tag/khoinghiep?refer=embed">#khoinghiep</a>
+        <a target="_blank" title="♬ nhạc nền  - Chè TiDi"
+           href="https://www.tiktok.com/music/nhạc-nền-Chè-TiDi-7266732706086636289?refer=embed">♬ nhạc nền  - Chè TiDi</a>
+      </section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
   </div>
-
-  <script>
-    function getMessengerContext() {
-      if (typeof MessengerExtensions === "undefined") {
-        document.getElementById("output").innerText = "MessengerExtensions is not available. Make sure this is opened in Messenger WebView.";
-        return;
-      }
-
-      MessengerExtensions.getContext('1191615432163749', 
-        function success(thread_context) {
-          document.getElementById("output").innerText =
-            "PSID: " + thread_context.psid + "\n" +
-            "Thread ID: " + thread_context.thread_id + "\n" +
-            "Page ID: " + thread_context.page_id;
-        },
-        function error(err) {
-          document.getElementById("output").innerText = "Error getting context: " + JSON.stringify(err);
-        }
-      );
-    }
-  </script>
 </body>
 </html>
