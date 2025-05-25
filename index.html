@@ -3,50 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nhúng TikTok Video</title>
+  <title>Chè Thiên TiDi - 190 Lê Duẩn</title>
   <style>
+    /* Reset cơ bản */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 2rem;
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      font-family: sans-serif;
-      background: #f9f9f9;
     }
-    .tiktok-container {
+
+    .app-container {
+      display: flex;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    /* Cột trái chứa video */
+    .left {
+      flex: 1;
+      background: #000; /* nền đen giống khung menu */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .left .tiktok-container {
       max-width: 605px;
       min-width: 325px;
       width: 100%;
-      padding: 1rem;
+    }
+
+    /* Cột phải chứa thông tin */
+    .right {
+      width: 300px;
+      padding: 2rem;
       background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .info h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    .info .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .info .row .icon {
+      margin-right: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #FFE9C3;
+      color: #C17A00;
+      padding: 0.3rem 0.6rem;
+      border-radius: 16px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .btn-order {
+      display: block;
+      text-align: center;
+      background: #F57C00;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.8rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <div class="tiktok-container">
-    <blockquote class="tiktok-embed"
-                cite="https://www.tiktok.com/@chetidi/video/7266732682028109058"
-                data-video-id="7266732682028109058"
-                style="max-width: 605px;min-width: 325px;">
-      <section>
-        <a target="_blank" title="@chetidi" href="https://www.tiktok.com/@chetidi?refer=embed">@chetidi</a>
-        Bạn nào muốn biết bí kíp nấu chè khúc bạch thơm mềm, béo ngậy, núng nính thì comment cho Tidi biết nha 😊
-        <a title="chetidi" target="_blank" href="https://www.tiktok.com/tag/chetidi?refer=embed">#chetidi</a>
-        <a title="chengondanang" target="_blank" href="https://www.tiktok.com/tag/chengondanang?refer=embed">#chengondanang</a>
-        <a title="che" target="_blank" href="https://www.tiktok.com/tag/che?refer=embed">#che</a>
-        <a title="learnontiktok" target="_blank" href="https://www.tiktok.com/tag/learnontiktok?refer=embed">#learnontiktok</a>
-        <a title="ancungtiktok" target="_blank" href="https://www.tiktok.com/tag/ancungtiktok?refer=embed">#ancungtiktok</a>
-        <a title="danang" target="_blank" href="https://www.tiktok.com/tag/danang?refer=embed">#danang</a>
-        <a title="xuhuong" target="_blank" href="https://www.tiktok.com/tag/xuhuong?refer=embed">#xuhuong</a>
-        <a title="khoinghiep" target="_blank" href="https://www.tiktok.com/tag/khoinghiep?refer=embed">#khoinghiep</a>
-        <a target="_blank" title="♬ nhạc nền  - Chè TiDi"
-           href="https://www.tiktok.com/music/nhạc-nền-Chè-TiDi-7266732706086636289?refer=embed">♬ nhạc nền  - Chè TiDi</a>
-      </section>
-    </blockquote>
-    <script async src="https://www.tiktok.com/embed.js"></script>
+
+  <div class="app-container">
+    <!-- Cột trái: nhúng TikTok -->
+    <div class="left">
+      <div class="tiktok-container">
+        <blockquote class="tiktok-embed"
+                    cite="https://www.tiktok.com/@chetidi/video/7266732682028109058"
+                    data-video-id="7266732682028109058"
+                    style="max-width: 605px;min-width: 325px;">
+          <section>
+            <a target="_blank" title="@chetidi" href="https://www.tiktok.com/@chetidi?refer=embed">@chetidi</a>
+            Bạn nào muốn biết bí kíp nấu chè khúc bạch thơm mềm, béo ngậy, núng nính thì comment cho Tidi biết nha 😊
+          </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </div>
+
+    <!-- Cột phải: thông tin quán -->
+    <div class="right">
+      <div class="info">
+        <h1>Chè Thiên TiDi - 190 Lê Duẩn</h1>
+
+        <div class="row">
+          <span class="icon">⏰</span>
+          <span>14:00 - 22:00</span>
+        </div>
+
+        <div class="row">
+          <span class="badge">Freeship 50%</span>
+        </div>
+
+        <div class="row">
+          <span class="icon">📍</span>
+          <span>190 Đ. Lê Duẩn, Tân Chính, Thanh Khê, Đà Nẵng</span>
+        </div>
+      </div>
+
+      <a href="#" class="btn-order">Đặt món ngay</a>
+    </div>
   </div>
+
 </body>
 </html>
